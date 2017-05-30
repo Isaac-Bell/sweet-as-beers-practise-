@@ -1,10 +1,23 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-// This might need to be turned into a stateful (class-based) component
-const App = () => (
-  <div className='app'>
-    Ready to rock and roll
-  </div>
-)
+import Cart from './Cart'
+import Header from './Header'
+import BeerList from './BeerList'
 
-export default App
+const App = (props) => {
+  return (
+    <div className='app'>
+      <Header />
+      {props.currentPage === 'listing' ? <BeerList /> : <Cart />}
+    </div>
+  )
+}
+
+const mapStateToProps = (state) => {
+  return {
+    currentPage: state.currentPage
+  }
+}
+
+export default connect(mapStateToProps)(App)
