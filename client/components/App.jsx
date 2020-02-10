@@ -10,7 +10,7 @@ class App extends React.Component {
   constructor () {
     super()
     this.state = {
-      onListing: true,
+      activePage: "listing",
       cart: []
     }
     this.addToCart = this.addToCart.bind(this)
@@ -23,13 +23,13 @@ class App extends React.Component {
         ...this.state.cart,
         {id, quantity: 1} // TODO: increment if already added
       ],
-      onListing: false
+      activePage: "cart"
     })
   }
 
   keepShopping () {
     this.setState({
-      onListing: true
+      activePage: "listing"
     })
   }
 
@@ -39,7 +39,7 @@ class App extends React.Component {
     return (
       <div className='app'>
         <Header />
-        {this.state.onListing ? beerList : cart}
+        {this.state.activePage === "listing" ? beerList : cart}
       </div>
     )
   }
