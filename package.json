@@ -23,7 +23,8 @@
     ]
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "standard": "^14.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
