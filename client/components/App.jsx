@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { BeerList } from './BeerList'
+import BeerList from './BeerList'
 
 // This might need to be turned into a stateful (class-based) component
 const App = () => (
