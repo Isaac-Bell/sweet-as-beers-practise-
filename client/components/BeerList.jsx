@@ -5,11 +5,11 @@ const BeerList = (props) => {
    console.log(props.beersData[0])
     return (
         <>
-    <h2>BeerList</h2>
+    <h2>Beer List</h2>
       <ul>
-        {/* {props.beersData.map((beer,id) => { 
-           <li>Beer Name: {beer.name} {id}</li>
-        })} */}
+        {props.beersData.map((beer,id) => { 
+          return <li key={id}> {beer.name}</li>
+        })}
       </ul>
     </>
     )
