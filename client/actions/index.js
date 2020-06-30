@@ -1,5 +1,6 @@
-export const actionCreatorName = () => {
+export const addBeerToCart = (beerId) => {
   return {
-    type: 'ACTION_TYPE'
+    type: 'ADD_BEER_TO_CART',
+    beerid: beerId
   }
 }
