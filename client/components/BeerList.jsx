@@ -3,7 +3,7 @@ import React from 'react'
 const BeerList = props => {
   return (
     <>
-      <p className="welcome">Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.</p>
+      <p className="welcome">{`Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.`}</p>
 
       {props.data.beers.map(beer => {
         return (
