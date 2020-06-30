@@ -1,6 +1,12 @@
 import React from 'react'
+import { navigate } from '../actions'
+import { connect } from 'react-redux'
 
 const BeerListItem = (props) => {
+  const clickHandler = () => {
+    props.dispatch(navigate('cart'))
+  }
+
   return (
     <div>
       <div className="beer">
@@ -9,11 +15,11 @@ const BeerListItem = (props) => {
         <p>
           <span className="country">{props.country}</span>
           <span className="abv">{props.abv}</span>
-          <a href="/designs/cart.html" className="cart-link">Add to cart</a>
+          <button onClick={clickHandler} href="#" className="cart-link">add to Cart</button>
         </p>
       </div>
     </div>
   )
 }
 
-export default BeerListItem
+export default connect()(BeerListItem)

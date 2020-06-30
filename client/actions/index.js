@@ -3,3 +3,10 @@ export const actionCreatorName = () => {
     type: 'ACTION_TYPE'
   }
 }
+
+export const navigate = (page) => {
+  return {
+    type: 'NAVIGATE',
+    page: page
+  }
+}

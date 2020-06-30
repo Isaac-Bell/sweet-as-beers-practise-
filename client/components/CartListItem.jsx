@@ -7,7 +7,7 @@ class CartListItem extends React.Component {
       <>
         <tr>
           <td>{this.props.name}</td>
-          <td><input className="update-input" value="0" /></td>
+          <td><input className="update-input" /></td>
           <td><button><span className="fa fa-trash fa-2x"></span></button></td>
         </tr>
       </>
