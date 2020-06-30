@@ -4,11 +4,11 @@ import CartListItem from './CartListItem'
 class Cart extends React.Component {
   state = {
     beer: [{
-      name: 'Wild & Woolly Basilisk',
-      quantity: '10'
+      name: '',
+      quantity: ''
     },
-    { name: 'Epic Apocalypse',
-      quantity: '3'
+    { name: '',
+      quantity: ''
     }]
   }
 
