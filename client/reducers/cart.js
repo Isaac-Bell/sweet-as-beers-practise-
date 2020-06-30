@@ -4,3 +4,5 @@ function cart (state, action) {
             return 
     }
 }
+
+export default cart

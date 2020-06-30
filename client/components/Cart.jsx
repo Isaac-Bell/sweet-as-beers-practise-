@@ -1,4 +1,4 @@
-<div class="cart">
+{/* <div class="cart">
 
     <h1><span class="fa fa-beer"></span> Sweet As Beers <span class="fa fa-beer"></span></h1>
 
@@ -23,4 +23,4 @@
         <button class="button-primary">Checkout</button>
     </p>
 
-</div>
+</div> */}
