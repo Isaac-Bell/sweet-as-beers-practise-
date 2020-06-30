@@ -10,8 +10,8 @@ const BeerList = () => {
       <ul>
         {data.beers.map(beer => {
           return (
-            <BeerListItem key={beer.id}
-              {...beer} />
+            <BeerListItem key={beer.name}
+              beerprop={beer} />
           )
         }
         )}

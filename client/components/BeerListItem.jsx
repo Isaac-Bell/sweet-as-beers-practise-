@@ -1,16 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-export const BeerListItem = () => {
+const BeerListItem = (props) => {
+  console.log(BeerListItem)
   return (
     <li>
-      
+      {props.beerprop.name}
     </li>
   )
 }
 
-const mapStateToProps = (state) => ({
+// const mapStateToProps = (state) => ({
 
-})
+// })
 
-export default connect(mapStateToProps)(BeerListItem)
+export default connect()(BeerListItem)
