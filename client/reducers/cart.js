@@ -10,12 +10,15 @@ const initialState = [
   }
 ]
 
+export const ADD_TO_CART = 'ADD_TO_CART'
+export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+
 const cart = (state = initialState, action) => {
   let increasedCount = false
   let beerCart = []
 
   switch (action.type) {
-    case 'ADD_TO_CART':
+    case ADD_TO_CART:
       beerCart = state.map(beer => {
         if (beer.id === action.id) {
           ++beer.quantity
@@ -23,7 +26,6 @@ const cart = (state = initialState, action) => {
         }
         return beer
       })
-
       if (!increasedCount) {
         beerCart.push({
           id: action.id,
@@ -31,8 +33,10 @@ const cart = (state = initialState, action) => {
           quantity: 1
         })
       }
-
       return beerCart
+
+    case REMOVE_FROM_CART:
+      return state.filter(beer => beer.id !== action.id)
 
     default:
       return state
