@@ -1,11 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { changePage } from '../actions'
+import { changePage, addToCart } from '../actions'
 
 function BeerListItem(props) {
-  const navigate = (target, dispatch) => {
-    console.log('hello')
+  const navigate = (target, name, dispatch) => {
     dispatch(changePage(target))
+    dispatch(addToCart(name))
   }
 
   const { id, name, brewery, country, style, abv } = props.beer
@@ -19,7 +19,7 @@ function BeerListItem(props) {
         <span className="country">{country}</span>
         <span className="abv">{abv} abv</span>
         <a
-          onClick={() => navigate('cart', props.dispatch)}
+          onClick={() => navigate('cart', name, props.dispatch)}
           className="cart-link">
           Add to cart
         </a>

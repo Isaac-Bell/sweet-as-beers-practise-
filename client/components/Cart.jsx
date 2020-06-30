@@ -39,8 +39,8 @@ function Cart(props) {
           </tr>
         </thead>
         <tbody>
-          {dummyData.map(beer => (
-            <CartListItems key={beer.beer} beer={beer} />
+          {props.cart.map(beer => (
+            <CartListItems key={beer.name} beer={beer} />
           ))}
         </tbody>
       </table>
@@ -56,4 +56,10 @@ function Cart(props) {
   )
 }
 
-export default connect()(Cart)
+const mapStateToProps = state => {
+  return {
+    cart: state.cart,
+  }
+}
+
+export default connect(mapStateToProps)(Cart)

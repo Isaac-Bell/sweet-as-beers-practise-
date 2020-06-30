@@ -1,12 +1,12 @@
 import React from 'react'
 
 function CartListItems(props) {
-  const { beer, quantity } = props.beer
+  const { name, quantity } = props.beer
   return (
-    <tr key={beer}>
-      <td>{beer}</td>
+    <tr key={name}>
+      <td>{name}</td>
       <td>
-        <input className="update-input" value={quantity} />
+        <input className="update-input" defaultValue={quantity} />
       </td>
       <td>
         <button>
