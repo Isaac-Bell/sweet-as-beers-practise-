@@ -6,8 +6,9 @@ import BeerListItem from './BeerListItem'
 const BeerList = () => {
   return (
     <div>
-      <h2>hello</h2>
-      <ul>
+      <p className="welcome">Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.
+      </p>
+      <div>
         {data.beers.map(beer => {
           return (
             <BeerListItem key={beer.name}
@@ -15,7 +16,7 @@ const BeerList = () => {
           )
         }
         )}
-      </ul>
+      </div>
     </div>
   )
 }
