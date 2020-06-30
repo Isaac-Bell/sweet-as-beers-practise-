@@ -8,10 +8,10 @@ const beerListItem = (props) => (
         <p>
             <span class="country">{props.country}</span>
             <span class="abv">props.abv</span>
-            <a href="/designs/cart.html" class="cart-link" onClick={props.}>Add to cart</a>
+            <a href="/designs/cart.html" class="cart-link">Add to cart</a>
         </p>
     </div>
 
 )
 
-export default BeerListItem
+export default beerListItem

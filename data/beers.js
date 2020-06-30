@@ -1,4 +1,6 @@
-export default {
+const { NamedModulesPlugin } = require("webpack")
+
+module.exports = {
   beers: [
     {
       id: 1,
