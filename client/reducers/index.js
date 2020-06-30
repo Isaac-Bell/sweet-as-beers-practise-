@@ -1,11 +1,9 @@
-// import {combineReducers} from 'redux'
+import {combineReducers} from 'redux'
 
-const beerData = require('../../data/beers')
+import beers from './beers'
+import cart from './cart'
 
-// import otherReducer from './other-reducer'
-console.log(beerData)
-
-
-// export default combineReducers({
-//   // otherReducer
-// })
+export default combineReducers({
+  beers,
+  cart
+})
