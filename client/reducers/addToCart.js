@@ -9,6 +9,9 @@ const addToCart = (state = [], action) => {
         quantity: quantity++
       }]
 
+    case 'REMOVE_FROM_CART':
+      return state.filter(beer => beer.id !== action.id)
+
     default:
       return state
   }

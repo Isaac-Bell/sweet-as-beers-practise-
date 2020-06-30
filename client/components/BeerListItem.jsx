@@ -1,6 +1,7 @@
 import React from 'react'
-import { navigate, addToCart } from '../actions'
 import { connect } from 'react-redux'
+
+import { navigate, addToCart } from '../actions'
 
 class BeerListItem extends React.Component {
   // constructor (props) {
@@ -21,7 +22,7 @@ class BeerListItem extends React.Component {
           <p>
             <span className="country">{this.props.country}</span>
             <span className="abv">{this.props.abv}</span>
-            <button onClick={() => this.clickHandler(this.props.id, this.props.name)} href="#" className="cart-link">add to Cart</button>
+            <button onClick={() => this.clickHandler(this.props.id, this.props.name)} href="#" className="cart-link">Add to Cart</button>
           </p>
         </div>
       </div>
