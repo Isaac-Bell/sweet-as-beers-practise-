@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const BeerListItem = (props) => {
   return (
@@ -9,7 +10,8 @@ const BeerListItem = (props) => {
         <p>
           <span className='country'>{props.beer.country}</span>
           <span className='abv'>{props.beer.abv}</span>
-          <a href='/designs/cart.html' className='cart-link'>Add to cart</a>
+          <Link to='/cart'>Add to cart</Link>
+          {/* <a href='/cart' className='cart-link'>Add to cart</a> */}
         </p>
       </div>
     </>

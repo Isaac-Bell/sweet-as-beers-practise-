@@ -1,5 +1,6 @@
 import React from 'react'
 import CartItem from './CartItem'
+import { Link } from 'react-router-dom'
 
 class Cart extends React.Component {
   render () {
@@ -21,7 +22,8 @@ class Cart extends React.Component {
             </tbody>
           </table>
           <p class='actions'>
-            <a href='/designs/listing.html'>Continue shopping</a>
+            <Link to='/'>Continue shopping</Link>
+            {/* <a href='/'>Continue shopping</a> */}
             <button>Update</button>
             <button class='button-primary'>Checkout</button>
           </p>
