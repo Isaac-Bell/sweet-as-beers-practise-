@@ -1,29 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { changePage } from '../actions'
+import { changePage, updateQuantities } from '../actions'
 
 import CartListItems from './CartListItems'
-
-const dummyData = [
-  {
-    beer: 'Tasty',
-    quantity: 5,
-  },
-  {
-    beer: 'Gross',
-    quantity: 1,
-  },
-  {
-    beer: 'Okay',
-    quantity: 3,
-  },
-]
 
 const navigate = (target, dispatch) => {
   dispatch(changePage(target))
 }
 
+const updateHandler = (cart, dispatch) => {
+  dispatch(updateQuantities(cart))
+}
+
 function Cart(props) {
+  const [amount, setAmount] = useState([])
+
+  const changeHandler = e => {
+    const { id, value } = e.target
+    let newArray = [...amount, { id, value }]
+    setAmount(newArray)
+  }
+
   return (
     <div className="cart">
       <p className="welcome">
@@ -40,7 +37,11 @@ function Cart(props) {
         </thead>
         <tbody>
           {props.cart.map(beer => (
-            <CartListItems key={beer.name} beer={beer} />
+            <CartListItems
+              changeHandler={changeHandler}
+              key={beer.id}
+              beer={beer}
+            />
           ))}
         </tbody>
       </table>
@@ -49,7 +50,9 @@ function Cart(props) {
         <a onClick={() => navigate('listing', props.dispatch)}>
           Continue shopping
         </a>
-        <button>Update</button>
+        <button onClick={() => updateHandler(amount, props.dispatch)}>
+          Update
+        </button>
         <button className="button-primary">Checkout</button>
       </p>
     </div>

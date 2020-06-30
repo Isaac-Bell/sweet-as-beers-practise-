@@ -14,3 +14,18 @@ export const addToCart = name => {
     name,
   }
 }
+
+export const removeFromCart = id => {
+  return {
+    type: 'REMOVE_FROM_CART',
+    id,
+  }
+}
+
+export const updateQuantities = cart => {
+  console.log(cart)
+  return {
+    type: 'UPDATE_QUANTITIES',
+    cart,
+  }
+}

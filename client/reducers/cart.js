@@ -7,6 +7,12 @@ const cart = (state = [], action) => {
         quantity: 1,
       }
       return [...state, newBeer]
+
+    case 'REMOVE_FROM_CART':
+      return state.filter(beer => beer.id !== action.id)
+
+    case 'UPDATE_QUANTITIES':
+
     default:
       return state
   }
