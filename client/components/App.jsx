@@ -11,7 +11,7 @@ const App = () => (
   <>
   <div className='app'>
     <Header />
-    {/* <Beerlist beers = {beerData.beers} /> */}
+    <Beerlist beers = {beerData.beers} />
     <Cart beers={beerData.beers} />
   </div>
   </>
