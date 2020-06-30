@@ -4,7 +4,6 @@ import data from '../../data/beers'
 import CartListItem from './CartListItem'
 
 export const Cart = () => {
-
   return (
     <div>
       <p className="welcome">Thirsty? Sweet! You&apos;re one step closer to a quenching.</p>
@@ -18,15 +17,15 @@ export const Cart = () => {
             </tr>
           </thead>
           <tbody>
-
+            <CartListItem />
           </tbody>
 
         </table>
 
         <p className="actions">
           <a href='#'>Continue shopping</a>
-          <button>Update</button>
-          <button className="button-primary">Checkout</button>
+          <a href='#'><button>Update</button></a>
+          <a href='#'><button className="button-primary">Checkout</button></a>
         </p>
       </div>
     </div>
