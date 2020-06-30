@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
 import Header from './Header'
 import CartListItem from './CartListItem'
@@ -23,13 +24,7 @@ class Cart extends React.Component {
               </tr>
             </thead>
             <tbody>
-              {this.props.beerData.beers.map(beer => {
-                return (
-                  <CartListItem key={beer.id}
-                    {...beer}
-                  />
-                )
-              })}
+              {this.props.addToCart.map(el => <CartListItem cartItem={el} key={el.id} />)}
             </tbody>
           </table>
 
@@ -44,4 +39,8 @@ class Cart extends React.Component {
   }
 }
 
-export default Cart
+const mapStateToProps = state => {
+  return { addToCart: state.addToCart }
+}
+
+export default connect(mapStateToProps)(Cart)

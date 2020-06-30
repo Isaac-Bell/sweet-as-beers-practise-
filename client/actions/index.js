@@ -10,3 +10,11 @@ export const navigate = (page) => {
     page: page
   }
 }
+
+export const addToCart = (id, name) => {
+  return {
+    type: 'ADD_TO_CART',
+    id: id,
+    name: name
+  }
+}
