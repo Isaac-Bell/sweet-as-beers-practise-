@@ -1,11 +1,15 @@
 import React from 'react'
-// import cartListItem from './cartListItem'
+import CartListItem from './CartListItem'
 
 class Cart extends React.Component {
   state = {
-    beer: '',
-    quantity: '',
-    remove: ''
+    beer: [{
+      name: 'Wild & Woolly Basilisk',
+      quantity: '10'
+    },
+    { name: 'Epic Apocalypse',
+      quantity: '3'
+    }]
   }
 
   render () {
@@ -26,12 +30,9 @@ class Cart extends React.Component {
             </thead>
 
             <tbody>
-              <tr>
-                <td>{this.state.beer}</td>
-                <td><input className="update-input" value={this.state.quantity}/></td>
-                <td><button><span className="fa fa-trash fa-2x"></span></button></td>
-              </tr>
-
+              <>
+              <CartListItem state={this.state}/>
+              </>
               <p className="actions">
                 <a href="/designs/listing.html">Continue shopping</a>
                 <button>Update</button>

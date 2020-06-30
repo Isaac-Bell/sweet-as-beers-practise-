@@ -7,15 +7,17 @@ import Cart from './Cart'
 
 import beerData from '../../data/beers'
 
-
 class App extends React.Component {
+  state = {
+    activePage: 'listing'
+  }
+
   render () {
     return (
+
       <div className='app'>
         <Header />
-        <BeerList beers={beerData.beers}/>
-        <Cart />
-      
+        {this.state.activePage === 'listing' ? <BeerList beers={beerData.beers}/> : <Cart />}
       </div>
     )
   }
