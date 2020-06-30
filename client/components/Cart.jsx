@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Header from './Header'
+import CartListItem from './CartListItem'
 
 class Cart extends React.Component {
   render () {
@@ -11,11 +12,25 @@ class Cart extends React.Component {
         </div>
         <div>
           <p className="welcome">Thirsty? Sweet! You're one step closer to a quenching.</p>
-
+        </div>
+        <div>
           <table>
             <thead>
+              <tr>
+                <td>Beer</td>
+                <td>Quantity</td>
+                <td>Remove</td>
+              </tr>
             </thead>
             <tbody>
+              {this.props.beerData.beers.map(beer => {
+                return (
+                  <CartListItem key={beer.id}
+                    {...beer}
+                  />
+                )
+              })}
+
             </tbody>
           </table>
 

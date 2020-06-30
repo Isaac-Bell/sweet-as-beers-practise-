@@ -17,6 +17,7 @@ class Beerlist extends React.Component {
           {this.props.beerData.beers.map(beer => {
             // console.log(beer)
             return (
+              // passes props as object each time new item is mapped.
               <BeerListItem key={beer.id}
                 {...beer}
               />
