@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route } from 'react-router-dom'
 import BeerList from './BeerList'
 import Header from './Header'
 import Cart from './Cart'
@@ -14,9 +15,13 @@ class App extends React.Component {
     return (
       <>
         <div className='app'>
-          <Header />
-          <BeerList beersData={beersData.default.beers} />
-          <Cart />
+          <Route path='/' component={Header} />
+          <Route
+            exact path='/' render={() => (
+              <BeerList beersData={beersData.default.beers} />
+            )}
+          />
+          <Route exact path='/cart' component={Cart} />
         </div>
       </>
     )
