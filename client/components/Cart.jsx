@@ -16,8 +16,8 @@ function Cart(props) {
   const [amount, setAmount] = useState([])
 
   const changeHandler = e => {
-    const { id, value } = e.target
-    let newArray = [...amount, { id, value }]
+    const { id, value: quantity, name } = e.target
+    let newArray = [...amount, { id, quantity, name }]
     setAmount(newArray)
   }
 

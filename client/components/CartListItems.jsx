@@ -15,6 +15,7 @@ function CartListItems(props) {
       <td>
         <input
           id={id}
+          name={name}
           onChange={e => props.changeHandler(e)}
           className="update-input"
           defaultValue={quantity}

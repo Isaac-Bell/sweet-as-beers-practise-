@@ -12,7 +12,9 @@ const cart = (state = [], action) => {
       return state.filter(beer => beer.id !== action.id)
 
     case 'UPDATE_QUANTITIES':
-
+      action.cart.map(newBeer => {
+        return state.splice(newBeer.id, 1, newBeer)
+      })
     default:
       return state
   }
