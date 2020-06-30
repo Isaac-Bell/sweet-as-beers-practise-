@@ -3,7 +3,7 @@ const navigator = {
 
 }
 
-const navigationReducer = (state = navigator, action) => {
+export const navigationReducer = (state = navigator, action) => {
   switch (action.type) {
     case 'NAVIGATE':
       return {

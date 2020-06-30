@@ -1,18 +1,20 @@
 import React from 'react'
 import Cart from './Cart'
+import { navigate, addToCart } from '../actions'
+
+import { connect } from 'react-redux'
 
 class BeerListItem extends React.Component {
-  handleClick = () => {
-    let target = 'cart'
-    const action = {
-      type: 'NAVIGATE',
-      target
-    }
-    this.props.store.dispatch(action)
+  handleClick = (id, name) => {
+    const addAction = addToCart(id, name)
+    const navigateAction = navigate('cart')
+
+    this.props.dispatch(addAction)
+    this.props.dispatch(navigateAction)
   }
 
   render () {
-    const { name, style, brewery, country, abv } = this.props.beer
+    const { id, name, style, brewery, country, abv } = this.props.beer
 
     return (
       <div className="beer">
@@ -21,11 +23,11 @@ class BeerListItem extends React.Component {
         <p>
           <span className="country">{country} </span>
           <span className="abv">{abv}</span>
-          <a href="/designs/cart.html" className="cart-link" onClick={this.handleClick}>Add to cart</a>
+          <a href="#" className="cart-link" onClick={(e) => this.handleClick(id, name)}>Add to cart</a>
         </p>
       </div>
     )
   }
 }
 
-export default BeerListItem
+export default connect()(BeerListItem)
