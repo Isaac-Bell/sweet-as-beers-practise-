@@ -1,17 +1,16 @@
-const navigationReducer = {
+const navigator = {
   activePage: 'listing'
 
 }
 
-const navigate = (state = navigationReducer, action) => {
+const navigationReducer = (state = navigator, action) => {
   switch (action.type) {
     case 'NAVIGATE':
       return {
         activePage: action.target }
-
     default:
       return state
   }
 }
 
-export default navigate
+export default navigationReducer

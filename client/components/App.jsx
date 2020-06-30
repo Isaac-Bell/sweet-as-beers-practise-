@@ -9,7 +9,7 @@ import beerData from '../../data/beers'
 
 class App extends React.Component {
   state = {
-    activePage: 'cart'
+    activePage: 'listing'
   }
 
   render () {
