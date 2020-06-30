@@ -11,34 +11,28 @@ const initialState = [
 ]
 
 const cart = (state = initialState, action) => {
-  let newItemAdded = false
-  let toReturn
+  let increasedCount = false
+  let beerCart = []
+
   switch (action.type) {
     case 'ADD_TO_CART':
-      state.map(beer => {
+      beerCart = state.map(beer => {
         if (beer.id === action.id) {
           ++beer.quantity
-        } else {
-          newItemAdded = true
+          increasedCount = true
         }
+        return beer
       })
-      if (newItemAdded) {
-        toReturn = [...state, {
+
+      if (!increasedCount) {
+        beerCart.push({
           id: action.id,
           name: action.name,
           quantity: 1
-        } ]
+        })
       }
 
-      // newItemAdded
-      //   ? toReturn = [...state, {
-      //     id: action.id,
-      //     name: action.name,
-      //     quantity: 1
-      //   } ]
-      //   : to
-
-      return toReturn
+      return beerCart
 
     default:
       return state
