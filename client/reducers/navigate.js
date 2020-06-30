@@ -1,7 +1,7 @@
 const activePage = (state = 'listing', action) => {
   switch (action.type) {
     case 'NAVIGATE':
-      return action.target === 'listing' ? 'cart' : 'listing'
+      return action.target === 'listing' ? 'listing' : 'cart'
     default:
       return state
   }

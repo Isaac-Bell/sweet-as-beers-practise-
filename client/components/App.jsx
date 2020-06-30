@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
 import beerInv from '../../data/beers'
 
@@ -7,21 +8,23 @@ import BeerList from './BeerList'
 import Cart from './Cart'
 
 // This might need to be turned into a stateful (class-based) component
-const App = () => {
-  const navigate = target => {
-    return {
-      type: 'NAVIGATE',
-      target, // 'listing' or 'cart'
-    }
-  }
-
+const App = props => {
   return (
     <div className="app">
       <Header />
-      {/* <BeerList beers={beerInv.beers} /> */}
-      <Cart changePage={navigate} />
+      {props.navigate === 'listing' ? (
+        <BeerList beers={beerInv.beers} />
+      ) : (
+        <Cart />
+      )}
     </div>
   )
 }
 
-export default App
+const mapStateToProps = state => {
+  return {
+    navigate: state.navigate,
+  }
+}
+
+export default connect(mapStateToProps)(App)

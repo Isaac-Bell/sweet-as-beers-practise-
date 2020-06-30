@@ -1,5 +1,6 @@
-export const actionCreatorName = () => {
+export const changePage = target => {
   return {
-    type: 'ACTION_TYPE'
+    type: 'NAVIGATE',
+    target, // 'listing' or 'cart'
   }
 }

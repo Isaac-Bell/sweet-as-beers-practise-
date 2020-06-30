@@ -1,6 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { changePage } from '../actions'
 
 function BeerListItem(props) {
+  const navigate = (target, dispatch) => {
+    console.log('hello')
+    dispatch(changePage(target))
+  }
+
   const { id, name, brewery, country, style, abv } = props.beer
   return (
     <div className="beer" key={id}>
@@ -11,7 +18,9 @@ function BeerListItem(props) {
       <p>
         <span className="country">{country}</span>
         <span className="abv">{abv} abv</span>
-        <a href="/designs/cart.html" className="cart-link">
+        <a
+          onClick={() => navigate('cart', props.dispatch)}
+          className="cart-link">
           Add to cart
         </a>
       </p>
@@ -19,4 +28,4 @@ function BeerListItem(props) {
   )
 }
 
-export default BeerListItem
+export default connect()(BeerListItem)

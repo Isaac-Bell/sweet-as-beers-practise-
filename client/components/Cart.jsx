@@ -1,4 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { changePage } from '../actions'
+
 import CartListItems from './CartListItems'
 
 const dummyData = [
@@ -15,6 +18,10 @@ const dummyData = [
     quantity: 3,
   },
 ]
+
+const navigate = (target, dispatch) => {
+  dispatch(changePage(target))
+}
 
 function Cart(props) {
   return (
@@ -39,7 +46,9 @@ function Cart(props) {
       </table>
 
       <p className="actions">
-        <a onClick={props.changePage}>Continue shopping</a>
+        <a onClick={() => navigate('listing', props.dispatch)}>
+          Continue shopping
+        </a>
         <button>Update</button>
         <button className="button-primary">Checkout</button>
       </p>
@@ -47,4 +56,4 @@ function Cart(props) {
   )
 }
 
-export default Cart
+export default connect()(Cart)
