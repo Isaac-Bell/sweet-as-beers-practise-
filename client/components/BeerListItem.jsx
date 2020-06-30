@@ -11,7 +11,6 @@ const BeerListItem = (props) => {
           <span className='country'>{props.beer.country}</span>
           <span className='abv'>{props.beer.abv}</span>
           <Link to='/cart'>Add to cart</Link>
-          {/* <a href='/cart' className='cart-link'>Add to cart</a> */}
         </p>
       </div>
     </>

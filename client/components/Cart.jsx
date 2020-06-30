@@ -1,13 +1,13 @@
 import React from 'react'
 import CartItem from './CartItem'
 import { Link } from 'react-router-dom'
+// import { connect } from 'react-redux'
 
 class Cart extends React.Component {
   render () {
     return (
       <>
-        <h1>CART COMPONENT DESIGN PLACEHOLDER</h1>
-        <div class='cart'>
+        <div className='cart'>
           <p className='welcome'>Thirsty? Sweet! You're one step closer to a quenching.</p>
           <table>
             <thead>
@@ -21,15 +21,24 @@ class Cart extends React.Component {
               <CartItem />
             </tbody>
           </table>
-          <p class='actions'>
+          <p className='actions'>
             <Link to='/'>Continue shopping</Link>
             {/* <a href='/'>Continue shopping</a> */}
             <button>Update</button>
-            <button class='button-primary'>Checkout</button>
+            <button className='button-primary'>Checkout</button>
           </p>
         </div>
       </>
     )
   }
 }
+
+// const mapStateToProps = (state) => {
+//   console.log('state:', state)
+//   return {
+//     beers: state.beers
+//   }
+// }
+
+// export default connect(mapStateToProps)(Cart)
 export default Cart
