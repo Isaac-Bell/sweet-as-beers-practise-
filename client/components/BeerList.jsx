@@ -9,7 +9,7 @@ function BeerList(props) {
         to let us know if we can answer any of your questions.
       </p>
       {props.beers.map(beer => (
-        <BeerListItem beer={beer} />
+        <BeerListItem key={beer.id} beer={beer} />
       ))}
     </div>
   )

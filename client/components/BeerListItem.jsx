@@ -11,7 +11,7 @@ function BeerListItem(props) {
       <p>
         <span className="country">{country}</span>
         <span className="abv">{abv} abv</span>
-        <a href="/designs/cart.html" class="cart-link">
+        <a href="/designs/cart.html" className="cart-link">
           Add to cart
         </a>
       </p>
