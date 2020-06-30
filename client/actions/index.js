@@ -1,6 +1,6 @@
-export const navigate = (Cart)=> {
+export const navigate = target => {
   return {
     type: 'NAVIGATE',
-    target: Cart
+    target: 
   }
 }
