@@ -1,5 +1,5 @@
 const navigator = {
-  activePage: 'listing'
+  activePage: 'Listing'
 
 }
 

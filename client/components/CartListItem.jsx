@@ -9,7 +9,7 @@ class CartListItem extends React.Component {
             return (
               <tr key={i}>
                 <td>{beerItem.name}</td>
-                <td><input className="update-input" value={beerItem.quantity}/></td>
+                <td><input className="update-input" placeholder={beerItem.quantity}/></td>
                 <td><button><span className="fa fa-trash fa-2x"></span></button></td>
               </tr>
             )

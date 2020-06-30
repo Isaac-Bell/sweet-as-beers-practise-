@@ -33,11 +33,15 @@ class Cart extends React.Component {
               <>
               <CartListItem state={this.state}/>
               </>
-              <p className="actions">
-                <a href="/designs/listing.html">Continue shopping</a>
-                <button>Update</button>
-                <button className="button-primary">Checkout</button>
-              </p>
+              <tr className="actions">
+                <td>
+                  <a href="/designs/listing.html">Continue shopping</a>
+                </td>
+                <td>
+                  <button>Update</button>
+                  <button className="button-primary">Checkout</button>
+                </td>
+              </tr>
             </tbody>
           </table>
         </div>
