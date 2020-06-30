@@ -12,8 +12,4 @@ const Beerlist = (props) => (
   </div>
 )
 
-// const connector = connect(mapStateToProps)
-// const connectedComponent = connector(Words)
-// export default connectedComponent
-// or
 export default connect()(Beerlist)

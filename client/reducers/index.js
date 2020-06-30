@@ -1,15 +1,20 @@
 const initialState = {
-  cartBeers: []
+  cartBeers: {},
+  visible: false
 }
 
-function beers(state = initialState, action) {
+function beers (state = initialState, action) {
   switch (action.type) {
     case 'ADD_BEER_TO_CART':
-      state.cartBeers.push(action.beerid)
-      return state
+      if (Object.keys(state.cartBeers).includes(action.beername)) {
+        state.cartBeers[action.beername] += 1
+        return state
+      } else {
+        state.cartBeers[action.beername] = 1
+        return state
+      }
     case 'REMOVE_FROM_CART':
-      const beerIndex = state.cartBeers.indexOf(beer => beer === action.beerid)
-      delete state.cartBeers.splice(beerIndex, 1)
+      delete state.cartBeers.splice(state.cartBeers.indexOf(beer => beer === action.beerid), 1)
       return state
     default:
       return state

@@ -1,13 +1,13 @@
-export const addBeerToCart = (beerId) => {
+export const addBeerToCart = (beerName) => {
   return {
     type: 'ADD_BEER_TO_CART',
-    beerid: beerId
+    beername: beerName
   }
 }
 
-export const removeBeerFromCart = (beerId) => {
+export const removeBeerFromCart = (beerName) => {
   return {
     type: 'REMOVE_FROM_CART',
-    beerid: beerId
+    beername: beerName
   }
 }

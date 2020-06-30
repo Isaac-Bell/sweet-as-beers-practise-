@@ -10,7 +10,7 @@ const BeerListItem = (props) => (
     <p>
       <span className="country">{props.country}</span>
       <span className="abv">{props.abv}</span>
-      <a className="cart-link" onClick={() => props.dispatch(addBeerToCart(props.id))}>Add to cart</a>
+      <a className="cart-link" onClick={() => props.dispatch(addBeerToCart(props.name))}>Add to cart</a>
     </p>
   </div>
 
