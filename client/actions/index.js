@@ -4,9 +4,17 @@ export const actionCreatorName = () => {
   }
 }
 
-export const navigate = target => {
+export const navigate = toggle => {
   return {
     type: 'NAVIGATE',
-    target // 'listing' or 'cart'
+    toggle // true or false
+  }
+}
+
+export const addItem = (id, name) => {
+  return {
+    type: 'ADD_TO_CART',
+    id,
+    name
   }
 }

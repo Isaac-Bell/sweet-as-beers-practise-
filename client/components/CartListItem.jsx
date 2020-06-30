@@ -10,4 +10,10 @@ const CartListItem = () => {
   )
 }
 
+// const mapStateToProps = (state) => {
+//   return {
+//     items: // items from store
+//   }
+// }
+
 export default CartListItem

@@ -1,7 +1,7 @@
-const activePage = (state = 'listing', action) => {
+const activePage = (state = true, action) => {
   switch (action.type) {
     case 'NAVIGATE':
-      return action.target
+      return action.toggle
     default:
       return state
   }

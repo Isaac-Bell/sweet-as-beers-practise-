@@ -1,9 +1,5 @@
 import React from 'react'
 
-// function handleClick () {
-  
-// }
-
 const BeerList = props => {
   return (
     <>

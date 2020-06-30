@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div className='app'>
         <Header />
-        {this.props.page === 'cart' ? <Cart /> : <BeerList data={data} />}
+        {this.props.page ? <BeerList data={data} /> : <Cart />}
       </div>
     )
   }
