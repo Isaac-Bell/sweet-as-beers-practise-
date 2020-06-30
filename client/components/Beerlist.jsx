@@ -1,4 +1,6 @@
 import React from 'react'
+import Cart from './Cart'
+
 
 function Beerlist (props) {
   // const {store} = props
@@ -9,7 +11,7 @@ function Beerlist (props) {
   return (
     <>
 
-      <h1> Beers </h1>
+<p className="welcome">Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.</p>
 
       {beers.map((beer) => {
         return (
@@ -19,7 +21,7 @@ function Beerlist (props) {
             <p>
               <span className="country"> {beer.country} </span>
               <span className="abv"> {beer.abv} </span>
-              <a href="/designs/cart.html" className="cart-link">Add to cart</a>
+              <a href="#" className="cart-link">Add to cart</a>
             </p>
           </div>
         )

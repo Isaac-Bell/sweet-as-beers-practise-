@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Header from './Header'
+import Cart from './Cart'
 import Beerlist from './Beerlist'
 
 import beerData from '../../data/beers'
@@ -10,7 +11,8 @@ const App = () => (
   <>
   <div className='app'>
     <Header />
-    <Beerlist beers = {beerData.beers} />
+    {/* <Beerlist beers = {beerData.beers} /> */}
+    <Cart beers={beerData.beers} />
   </div>
   </>
 )
