@@ -7,7 +7,7 @@ export const addBeerToCart = (beerId) => {
 
 export const removeBeerFromCart = (beerId) => {
   return {
-    type: 'ADD_BEER_TO_CART',
+    type: 'REMOVE_FROM_CART',
     beerid: beerId
   }
 }

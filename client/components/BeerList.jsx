@@ -12,14 +12,8 @@ const Beerlist = (props) => (
   </div>
 )
 
-const mapStateToProps = (state) => {
-  return {
-    cartBeers: state.cartBeers
-  }
-}
-
 // const connector = connect(mapStateToProps)
 // const connectedComponent = connector(Words)
 // export default connectedComponent
 // or
-export default connect(mapStateToProps)(Beerlist)
+export default connect()(Beerlist)
