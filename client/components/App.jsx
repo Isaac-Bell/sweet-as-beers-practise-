@@ -8,7 +8,7 @@ const App = () => (
   <div className='app'>
     <Header />
     <BeerList />
-  </div>
+   </div>
 )
 
 export default App

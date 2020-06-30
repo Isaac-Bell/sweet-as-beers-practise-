@@ -2,7 +2,6 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 const BeerListItem = (props) => {
-  console.log(BeerListItem)
   return (
     <div>
       <div className="beer">
