@@ -1,7 +1,9 @@
 import {combineReducers} from 'redux'
 
-// import otherReducer from './other-reducer'
+import beers from './beers'
+import cart from './cart'
 
 export default combineReducers({
-  // otherReducer
+  beers,
+  cart
 })

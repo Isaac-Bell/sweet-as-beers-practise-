@@ -1,5 +1,6 @@
-export default {
-  beers: [
+const beerData =
+{ beers:
+  [
     {
       id: 1,
       name: 'HBIB Ginger Fusion',
@@ -101,3 +102,5 @@ export default {
     }
   ]
 }
+
+export default beerData
