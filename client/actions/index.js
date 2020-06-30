@@ -3,3 +3,10 @@ export const actionCreatorName = () => {
     type: 'ACTION_TYPE'
   }
 }
+
+export const navigate = target => {
+  return {
+    type: 'NAVIGATE',
+    target // 'listing' or 'cart'
+  }
+}

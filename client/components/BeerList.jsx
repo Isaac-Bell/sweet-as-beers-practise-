@@ -1,13 +1,15 @@
 import React from 'react'
 
-import data from '../../data/beers'
+// function handleClick () {
+  
+// }
 
-const BeerList = () => {
+const BeerList = props => {
   return (
     <>
       <p className="welcome">Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.</p>
 
-      {data.beers.map(beer => {
+      {props.data.beers.map(beer => {
         return (
           <div key={beer.id} className="beer">
             <p className="name">{beer.name}</p>
@@ -15,7 +17,7 @@ const BeerList = () => {
             <p>
               <span className="country">{beer.country}</span>
               <span className="abv">{beer.abv}</span>
-              <a href="#" className="cart-link">Add to cart</a>
+              <button className="cart-link">Add to cart</button>
             </p>
           </div>
         )
