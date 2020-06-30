@@ -1,8 +1,18 @@
-// const cartReducer = (state = [], action) => {
-//   return {
-//     type: 'ADD_TO_CART',
-//     beers: [...state.beers]
-//   }
-// }
+const cartReducer = (state = [], action) => {
+  switch (action.type) {
+    case 'ADD_TO_CART':
+      return [
+        ...state,
+        {
+          id: action.id,
+          name: action.name,
+          quantity: 1
+        }
+      ]
 
-// export default cartReducer
+    default:
+      return state
+  }
+}
+
+export default cartReducer
