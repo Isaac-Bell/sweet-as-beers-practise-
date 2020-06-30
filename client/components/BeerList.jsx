@@ -1,18 +1,20 @@
 import React from 'react'
+import BeerListItem from './BeerListItem'
 
 const BeerList = (props) => {
-    // View the first beer object in the array
-   console.log(props.beersData[0])
-    return (
-        <>
-    <h2>Beer List</h2>
-      <ul>
-        {props.beersData.map((beer,id) => { 
-          return <li key={id}> {beer.name}</li>
-        })}
-      </ul>
+  const beersData = props.beersData
+  // View the first beer object in the array
+  console.log(props.beersData[0])
+  return (
+    <>
+      {props.beersData.map((beer, id) => {
+        return  <BeerListItem beer={beer} />
+        // <p className='name' key={id}> {beer.name}</p>
+      })}
+      {/* <BeerListItem beersData={beersData} /> */}
+
     </>
-    )
+  )
 }
 
 export default BeerList
