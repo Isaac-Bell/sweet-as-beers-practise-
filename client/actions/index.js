@@ -1,3 +1,5 @@
+import { ProgressPlugin } from "webpack"
+
 export const actionCreatorName = () => {
   return {
     type: 'ACTION_TYPE'
