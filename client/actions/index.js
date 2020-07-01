@@ -23,7 +23,6 @@ export const removeFromCart = id => {
 }
 
 export const updateQuantities = cart => {
-  console.log(cart)
   return {
     type: 'UPDATE_QUANTITIES',
     cart,

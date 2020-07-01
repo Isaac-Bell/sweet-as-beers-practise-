@@ -6,7 +6,8 @@ const cart = (state = [], action) => {
         name: action.name,
         quantity: 1,
       }
-      return [...state, newBeer]
+      let stateCheck = state.find(beer => beer.name === newBeer.name)
+      return stateCheck ? state : [...state, newBeer]
 
     case 'REMOVE_FROM_CART':
       return state.filter(beer => beer.id !== action.id)
