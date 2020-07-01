@@ -1,15 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import CartListItem from './CartListItem'
+import { navigate } from '../actions/index'
 
 class Cart extends React.Component {
   handleClick = () => {
-    const action = {
-      type: 'NAVIGATION',
-      navigation: this.state.navigation
-    }
-
-    this.props.store.dispatch(action)
+    this.props.dispatch(navigate('BeerList'))
   }
 
   render () {
