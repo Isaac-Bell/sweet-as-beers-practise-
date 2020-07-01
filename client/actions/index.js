@@ -25,3 +25,11 @@ export const removeItem = id => {
     id
   }
 }
+
+export const updateQuantities = (id, quantity) => {
+  return {
+    type: 'UPDATE_QUANTITIES',
+    id,
+    quantity
+  }
+}

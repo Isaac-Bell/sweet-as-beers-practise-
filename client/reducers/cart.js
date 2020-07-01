@@ -1,19 +1,8 @@
-const initialState = [
-  {
-    id: 1,
-    name: 'HBIB Ginger Fusion',
-    quantity: 3
-  }, {
-    id: 2,
-    name: 'Mangose & Melons',
-    quantity: 1
-  }
-]
-
 export const ADD_TO_CART = 'ADD_TO_CART'
 export const REMOVE_FROM_CART = 'REMOVE_FROM_CART'
+export const UPDATE_QUANTITIES = 'UPDATE_QUANTITIES'
 
-const cart = (state = initialState, action) => {
+const cart = (state = [], action) => {
   let increasedCount = false
   let beerCart = []
 
@@ -37,6 +26,15 @@ const cart = (state = initialState, action) => {
 
     case REMOVE_FROM_CART:
       return state.filter(beer => beer.id !== action.id)
+
+    case UPDATE_QUANTITIES:
+      beerCart = state.map(beer => {
+        if (beer.id === action.id) {
+          beer.quantity = action.quantity
+        }
+        return beer
+      })
+      return beerCart
 
     default:
       return state

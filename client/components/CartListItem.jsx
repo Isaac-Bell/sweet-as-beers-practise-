@@ -15,6 +15,10 @@ const CartListItem = ({ cartItems, dispatch }) => {
   )
 }
 
+function handleChange (e) {
+
+}
+
 function handleClick (id, dispatch) {
   dispatch(removeItem(id))
 }
