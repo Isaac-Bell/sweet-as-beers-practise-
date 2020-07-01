@@ -15,9 +15,11 @@ function beers (state = initialState, action) {
         state.visible = true
         return state
       }
+
     case 'REMOVE_FROM_CART':
       delete state.cartBeers.splice(state.cartBeers.indexOf(beer => beer === action.beerid), 1)
       return state
+
     default:
       return state
   }

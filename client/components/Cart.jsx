@@ -20,7 +20,7 @@ function Cart (props) {
         </thead>
         <tbody>
           {props.cartBeers.map(beer => {
-            return <CartListItem key={beer.id} beer={beer}/>
+            return <CartListItem beer={beer}/>
           }
           )}
         </tbody>
