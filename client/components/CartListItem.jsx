@@ -1,6 +1,13 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { navigate, removeFromCart } from '../actions/index'
 
 const CartListItem = (props) => {
+  const handleClick = () => {
+    props.dispatch(navigate('Cart'))
+    props.dispatch(removeFromCart(props.cartprop.id, props.cartprop.name))
+  }
+
   return (
 
     <tr>
@@ -11,7 +18,7 @@ const CartListItem = (props) => {
         <input className="update-input" value={props.cartprop.quantity}></input>
       </td>
       <td>
-        <button>
+        <button onClick={handleClick}>
           <span className="fa fa-trash fa-2x"></span>
         </button>
       </td>
@@ -20,8 +27,10 @@ const CartListItem = (props) => {
   )
 }
 
-// const mapStateToProps = (state) => ({
+// const mapStateToProps = (state) => {
+//   return {
+//     CartListItem: state.CartListItem
+//   }
+// }
 
-// })
-
-export default CartListItem
+export default connect()(CartListItem)

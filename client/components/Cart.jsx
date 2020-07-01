@@ -29,7 +29,7 @@ class Cart extends React.Component {
                   cartprop={item}
                 />
               )}
-
+            
             </tbody>
 
           </table>

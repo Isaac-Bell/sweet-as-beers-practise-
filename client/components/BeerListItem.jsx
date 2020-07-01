@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { navigate, addToCart } from '../actions/index'
 
 const BeerListItem = (props) => {
-  
   const handleClick = () => {
     props.dispatch(navigate('Cart'))
     props.dispatch(addToCart(props.beerprop.id, props.beerprop.name))
