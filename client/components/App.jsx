@@ -2,15 +2,26 @@ import React from 'react'
 
 import BeerList from './Beerlist'
 import Cart from './Cart'
-
-import beerData from '../../server/beers'
+import { getBeers } from '../api'
 import { connect } from 'react-redux'
 
 class App extends React.Component {
+  state = {
+    beerData: []
+  }
+
+  componentDidMount () {
+    getBeers()
+      .then(response => {
+        this.setState({
+          beerData: response
+        })
+      })
+  }
   render () {
     return (
       <div className='app'>
-        {this.props.activePage === 'listing' ? <BeerList beerData={beerData} /> : <Cart beerData={beerData} /> }
+        {this.props.activePage === 'listing' ? <BeerList beerData={this.state.beerData} /> : <Cart beerData={beerData} /> }
       </div>
     )
   }
