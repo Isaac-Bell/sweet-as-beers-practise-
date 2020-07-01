@@ -1,19 +1,22 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-const CartListItem = () => {
+const CartListItem = ({ cartItems }) => {
   return (
-    <tr>
-      <td>HBIB Ginger Fusion</td>
-      <td><input className="update-input" value="3" /></td>
-      <td><button><span className="fa fa-trash fa-2x"></span></button></td>
-    </tr>
+    cartItems.map(item => {
+      return <tr key={item.id}>
+        <td>{item.name}</td>
+        <td><input className="update-input" value={item.quantity} /></td>
+        <td><button><span className="fa fa-trash fa-2x"></span></button></td>
+      </tr>
+    })
   )
 }
 
-// const mapStateToProps = (state) => {
-//   return {
-//     items: // items from store
-//   }
-// }
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state.cart
+  }
+}
 
-export default CartListItem
+export default connect(mapStateToProps)(CartListItem)
