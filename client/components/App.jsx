@@ -7,7 +7,7 @@ import Cart from './Cart'
 const beersData = require('../../data/beers.js')
 
 // Check the data is imported to App in the console
-console.log(beersData.default.beers)
+console.log('App.js component Beers data:', beersData.default.beers)
 
 // Converted into a stateful (class-based) component
 class App extends React.Component {
