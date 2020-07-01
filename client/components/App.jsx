@@ -1,4 +1,7 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { navigate } from '../actions'
+
 import Header from './Header'
 import Cart from './Cart'
 import BeerList from './BeerList'
@@ -13,11 +16,17 @@ class App extends React.Component {
     return (
       <div>
         <Header />
-        {/* <BeerList /> */}
-        <Cart />
+        <BeerList />
+        {/* <Cart /> */}
       </div>
     )
   }
 }
 
-export default App
+const mapStatetoProps = (state) => {
+  return {
+    navigation: state.navigation
+  }
+}
+
+export default connect(mapStatetoProps)(App)

@@ -1,8 +1,8 @@
-import {combineReducers} from 'redux'
-import test from './test'
+import { combineReducers } from 'redux'
+import navigation from './navigation'
 // import otherReducer from './other-reducer'
 
 export default combineReducers({
   // otherReducer
-  test
+  navigation
 })
