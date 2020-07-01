@@ -22,6 +22,7 @@ class Cart extends React.Component {
               </tr>
             </thead>
             <tbody>
+              
               <CartListItem />
             </tbody>
 
@@ -40,8 +41,10 @@ class Cart extends React.Component {
   }
 }
 
-// const mapStateToProps = (state) => ({
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart
+  }
+}
 
-// })
-
-export default connect()(Cart)
+export default connect(mapStateToProps)(Cart)

@@ -1,11 +1,14 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { navigate } from '../actions/index'
+import { navigate, addToCart } from '../actions/index'
 
 const BeerListItem = (props) => {
+  
   const handleClick = () => {
     props.dispatch(navigate('Cart'))
+    props.dispatch(addToCart(props.beerprop.id, props.beerprop.name))
   }
+
   return (
     <div>
       <div className="beer">

@@ -1,6 +1,5 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { navigate } from '../actions'
 
 import Header from './Header'
 import Cart from './Cart'

@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
 
-export const CartListItem = () => {
+const CartListItem = (props) => {
   return (
-    
+
     <tr>
       <td className="name">
-        HBIB Ginger Fusion
+        {props.beerprop.name}
       </td>
       <td>
         <input className="update-input" value="3"></input>
