@@ -9,6 +9,11 @@ const cartReducer = (state = [], action) => {
           quantity: 1
         }
       ]
+      // Add a new case for the new action to delete from cart
+    case 'REMOVE_FROM_CART':
+      return [
+        state.filter(beer => beer.id !== action.id)
+      ]
 
     default:
       return state

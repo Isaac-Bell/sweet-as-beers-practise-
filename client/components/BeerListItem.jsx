@@ -5,7 +5,7 @@ import { addToCart } from '../actions/index.js'
 
 // This component receives props from App
 const BeerListItem = (props) => {
-  function handleClick (id, name, dispatch) {
+  const handleClick = (id, name, dispatch) => {
     dispatch(addToCart(id, name))
   }
 

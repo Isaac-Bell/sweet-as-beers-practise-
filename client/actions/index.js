@@ -1,8 +1,3 @@
-export const actionCreatorName = () => {
-  return {
-    type: 'ACTION_TYPE'
-  }
-}
 
 let nextId = 0
 export const addToCart = (id, name) => {
@@ -11,5 +6,13 @@ export const addToCart = (id, name) => {
     id,
     name,
     quantity: ++nextId
+  }
+}
+
+// Add a new action to delete from cart
+export const removeFromCart = id => {
+  return {
+    type: 'REMOVE_FROM_CART',
+    id
   }
 }
