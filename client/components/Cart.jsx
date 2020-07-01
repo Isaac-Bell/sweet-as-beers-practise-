@@ -1,13 +1,17 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import CartListItem from './CartListItem'
-import { navigate } from '../actions/index'
+import { navigate, updateCart } from '../actions/index'
 import BeerListItem from './BeerListItem'
 import cart from '../reducers/cart'
 
 class Cart extends React.Component {
   handleClick = () => {
     this.props.dispatch(navigate('BeerList'))
+  }
+
+  handleUpdate = () => {
+    this.props.dispatch(updateCart(Cart))
   }
 
   render () {
@@ -29,7 +33,7 @@ class Cart extends React.Component {
                   cartprop={item}
                 />
               )}
-            
+
             </tbody>
 
           </table>
@@ -38,7 +42,7 @@ class Cart extends React.Component {
 
           <p className="actions">
             <button onClick={this.handleClick}>Continue shopping</button>
-            <button>Update</button>
+            <button onClick={this.handleUpdate}>Update</button>
             <button className="button-primary">Checkout</button>
           </p>
         </div>
