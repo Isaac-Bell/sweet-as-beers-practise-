@@ -1,16 +1,18 @@
-import React from 'react'
+import React, { render } from 'react'
 import BeerList from './BeerList'
 import beerData from '../../data/beers'
 import { connect } from 'react-redux'
+
 import Cart from './Cart'
 
 // This might need to be turned into a stateful (class-based) component
-const App = (props) => (
-  <div className='app'>
-    {console.log(props)}
-    {props.visible ? <Cart /> : <BeerList beerData={beerData}/>}
-  </div>
-)
+const App = (props) => {
+  render () {
+    <div className='app'>
+      {props.visible ? <Cart /> : <BeerList beerData={beerData}/>}
+    </div>
+  }
+}
 
 function mapStateToProps (state) {
   return { visible: state.visible }
