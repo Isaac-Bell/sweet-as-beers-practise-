@@ -2,6 +2,8 @@ import React from 'react'
 import { connect } from 'react-redux'
 import CartListItem from './CartListItem'
 import { navigate } from '../actions/index'
+import BeerListItem from './BeerListItem'
+import cart from '../reducers/cart'
 
 class Cart extends React.Component {
   handleClick = () => {
@@ -22,8 +24,12 @@ class Cart extends React.Component {
               </tr>
             </thead>
             <tbody>
-              
-              <CartListItem />
+              {this.props.cart.map(item =>
+                <CartListItem key={item.name}
+                  cartprop={item}
+                />
+              )}
+
             </tbody>
 
           </table>

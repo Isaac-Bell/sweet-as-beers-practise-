@@ -1,15 +1,14 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
 const CartListItem = (props) => {
   return (
 
     <tr>
       <td className="name">
-        {props.beerprop.name}
+        {props.cartprop.name}
       </td>
       <td>
-        <input className="update-input" value="3"></input>
+        <input className="update-input" value={props.cartprop.quantity}></input>
       </td>
       <td>
         <button>
@@ -25,4 +24,4 @@ const CartListItem = (props) => {
 
 // })
 
-export default connect()(CartListItem)
+export default CartListItem
