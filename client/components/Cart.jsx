@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import CartListItem from './CartListItem'
 
-function cart (props) {
+function Cart (props) {
   return (
     <div className="cart">
 
@@ -19,8 +19,9 @@ function cart (props) {
           </tr>
         </thead>
         <tbody>
-          {props.beerData.beers.map(beer =>
-            return <CartListItem beers={}/>
+          {props.cartBeers.map(beer => {
+            return <CartListItem key={beer.id} beer={beer}/>
+          }
           )}
         </tbody>
       </table>
@@ -35,4 +36,8 @@ function cart (props) {
   )
 }
 
-connect()(cart)
+function mapStateToProps(state) {
+  return { cartBeers: state.cartBeers }
+}
+
+export default connect(mapStateToProps)(Cart)

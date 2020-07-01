@@ -8,9 +8,11 @@ function beers (state = initialState, action) {
     case 'ADD_BEER_TO_CART':
       if (Object.keys(state.cartBeers).includes(action.beername)) {
         state.cartBeers[action.beername] += 1
+        state.visible = true
         return state
       } else {
         state.cartBeers[action.beername] = 1
+        state.visible = true
         return state
       }
     case 'REMOVE_FROM_CART':
