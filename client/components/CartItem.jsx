@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { removeFromCart } from '../actions/index.js'
-import cartReducer from '../reducers/cartReducer.js'
 
 const CartItem = (props) => {
   // Define an event handler for the trash button, which is added to button onClick.
