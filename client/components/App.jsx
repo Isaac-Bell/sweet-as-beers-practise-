@@ -8,16 +8,13 @@ import BeerList from './BeerList'
 
 // This might need to be turned into a stateful (class-based) component
 class App extends React.Component {
-  state = {
-
-  }
-
   render () {
     return (
       <div>
         <Header />
-        <BeerList />
-        {/* <Cart /> */}
+        {this.props.navigation === 'BeerList' ? <BeerList /> : <Cart />}
+        {/* <BeerList />
+        <Cart /> */}
       </div>
     )
   }
