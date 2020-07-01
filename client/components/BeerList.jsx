@@ -34,4 +34,10 @@ function handleClick (beer, dispatch) {
   dispatch(addItem(beer.id, beer.name))
 }
 
-export default connect()(BeerList)
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state.cart
+  }
+}
+
+export default connect(mapStateToProps)(BeerList)
