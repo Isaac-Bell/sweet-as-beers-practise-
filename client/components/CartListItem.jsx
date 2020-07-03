@@ -34,7 +34,7 @@ function Cart (props) {
           </table>
 
           <p className="actions">
-            <a href="/designs/listing.html">Continue shopping</a>
+            <button>Continue Shopping</button>
             <button>Update</button>
             <button className="button-primary">Checkout</button>
           </p>

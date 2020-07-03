@@ -3,3 +3,10 @@ export const actionCreatorName = () => {
     type: 'ACTION_TYPE'
   }
 }
+
+export const navigate = toggle => {
+  return {
+    type: 'NAVIGATE',
+    toggle // true or false
+  }
+}

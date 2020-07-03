@@ -12,7 +12,7 @@ function Beerlist (props) {
     <>
 
       <p className="welcome">Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.</p>
-      <BeerlistItem beers={props.beers} /> 
+      <BeerlistItem beers={props.beers} />
     </>
   )
 }
