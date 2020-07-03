@@ -1,10 +1,14 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-function BeerlistItem (props) {
-  const beers = props.beers
+import { navigate } from '../actions'
+import beerData from '../../data/beers'
+
+const BeerListItem = ({ beerData, dispatch }) => {
+  console.log(beerData)
   return (
   <>
-  {beers.map((beer) => {
+  {beerData.map((beer) => {
     return (
       <div key={beer.id} className="beer">
         <p className="name">{beer.name}</p>
@@ -12,7 +16,7 @@ function BeerlistItem (props) {
         <p>
           <span className="country"> {beer.country} </span>
           <span className="abv"> {beer.abv} </span>
-          <button>Add to cart</button>
+          <button onClick={() => handleClick(beer, dispatch)} className="cart-link">Add to cart</button>
         </p>
       </div>
     )
@@ -22,4 +26,15 @@ function BeerlistItem (props) {
   )
 }
 
-export default BeerlistItem
+function handleClick (beerData, dispatch) {
+  const toggle = false
+  dispatch(navigate(toggle))
+}
+
+const mapStateToProps = (state) => {
+  return {
+    cartItems: state.cart
+  }
+}
+
+export default connect(mapStateToProps)(BeerListItem)
