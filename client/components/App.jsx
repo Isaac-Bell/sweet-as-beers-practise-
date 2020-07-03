@@ -5,16 +5,23 @@ import Cart from './Cart'
 import Beerlist from './Beerlist'
 
 import beerData from '../../data/beers'
+import { connect } from 'react-redux'
 
-// This might need to be turned into a stateful (class-based) component
-const App = () => (
-  <>
-  <div className='app'>
-    <Header />
-    <Beerlist beers = {beerData.beers} />
-    <Cart beers={beerData.beers} />
-  </div>
-  </>
-)
+class App extends React.Component {
+  render () {
+    return (
+      <div className='app'>
+        <Header />
+        {this.props.page ? <Beerlist data={beerData} /> : <Cart />}
+      </div>
+    )
+  }
+}
 
-export default App
+const mapStateToProps = (state) => {
+  return {
+    page: state.activePage
+  }
+}
+
+export default connect(mapStateToProps)(App)
