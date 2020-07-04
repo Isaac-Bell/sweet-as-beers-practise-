@@ -11,7 +11,7 @@ router.get('/admin', (req, res) => {
   db.getBeers()
     .then(beers => {
       const viewData = { beers }
-      res.send(viewData)
+      res.json(viewData)
     })
     .catch(err => {
       // Security best practice violation:
