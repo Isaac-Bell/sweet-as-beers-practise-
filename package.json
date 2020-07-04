@@ -27,7 +27,8 @@
     "express-handlebars": "^4.0.5",
     "react-router-dom": "^5.2.0",
     "sqlite3": "^4.2.0",
-    "standard": "^14.3.4"
+    "standard": "^14.3.4",
+    "supertest": "^4.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
