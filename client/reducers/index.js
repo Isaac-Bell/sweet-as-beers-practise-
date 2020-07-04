@@ -7,7 +7,7 @@ import cart from './cart'
 
 export default combineReducers({
   beerlist,
-  activePage,
-  cart
+  activePage
+  // cart
   // otherReducer
 })

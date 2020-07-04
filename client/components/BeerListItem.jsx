@@ -2,31 +2,32 @@ import React from 'react'
 import { connect } from 'react-redux'
 
 import { navigate } from '../actions'
-import beerData from '../../data/beers'
+import beers from '../../data/beers'
 
-const BeerListItem = ({ beerData, dispatch }) => {
-  console.log(beerData)
+// const { beers } = this.props
+
+const BeerListItem = (props) => {
+  const beer = props.beer
   return (
   <>
-  {beerData.map((beer) => {
-    return (
-      <div key={beer.id} className="beer">
+      <div className="beer">
         <p className="name">{beer.name}</p>
         <p className="description">A {beer.style} from {beer.brewery} </p>
         <p>
           <span className="country"> {beer.country} </span>
           <span className="abv"> {beer.abv} </span>
-          <button onClick={() => handleClick(beer, dispatch)} className="cart-link">Add to cart</button>
+          <a href='#'
+            className='cart-link'
+            onClick={() => props.addToCart(beer.id)}>Add to cart</a>
         </p>
       </div>
-    )
-  })}
+
   </>
 
   )
 }
 
-function handleClick (beerData, dispatch) {
+function handleClick (beers, dispatch) {
   const toggle = false
   dispatch(navigate(toggle))
 }

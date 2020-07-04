@@ -2,7 +2,7 @@ import React from 'react'
 
 import Header from './Header'
 import Cart from './Cart'
-import Beerlist from './Beerlist'
+import BeerList from './BeerList'
 
 import beerData from '../../data/beers'
 import { connect } from 'react-redux'
@@ -12,7 +12,7 @@ class App extends React.Component {
     return (
       <div className='app'>
         <Header />
-        {this.props.page ? <Beerlist data={beerData} /> : <Cart />}
+        <BeerList data={beerData} />
       </div>
     )
   }
