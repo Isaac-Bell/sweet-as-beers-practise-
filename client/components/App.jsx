@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom'
 import BeerList from './BeerList'
 import Header from './Header'
 import Cart from './Cart'
+import AdminList from './AdminList'
 
 const beersData = require('../../data/beers.js')
 
@@ -22,6 +23,11 @@ class App extends React.Component {
             )}
           />
           <Route exact path='/cart' component={Cart} />
+          <Route
+            exact path='/admin' render={() => (
+              <AdminList beersData={beersData.default.beers} />
+            )}
+          />
         </div>
       </>
     )

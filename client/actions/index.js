@@ -16,3 +16,11 @@ export const removeFromCart = id => {
     id
   }
 }
+
+// Create a navigate action to show either the BeerList of Admin components
+export const navigate = target => {
+  return {
+    type: 'NAVIGATE',
+    target // 'listing' or 'admin'
+  }
+}
