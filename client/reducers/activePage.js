@@ -1,6 +1,6 @@
 export const NAVIGATE = 'NAVIGATE'
 
-const adminPage = (state = 'listing', action) => {
+const activePage = (state = 'listing', action) => {
   switch (action.type) {
     case NAVIGATE:
       return 'admin'
@@ -9,4 +9,4 @@ const adminPage = (state = 'listing', action) => {
   }
 }
 
-export default adminPage
+export default activePage
