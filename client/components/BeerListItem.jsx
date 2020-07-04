@@ -7,18 +7,18 @@ import beers from '../../data/beers'
 // const { beers } = this.props
 
 const BeerListItem = (props) => {
-  const beer = props.beer
+  // const beer = props.beer
   return (
   <>
       <div className="beer">
-        <p className="name">{beer.name}</p>
-        <p className="description">A {beer.style} from {beer.brewery} </p>
+        <p className="name">{this.props.name}</p>
+        <p className="description">A {this.props.style} from {this.props.brewery} </p>
         <p>
-          <span className="country"> {beer.country} </span>
-          <span className="abv"> {beer.abv} </span>
+          <span className="country"> {this.props.country} </span>
+          <span className="abv"> {this.props.abv} </span>
           <a href='#'
             className='cart-link'
-            onClick={() => props.addToCart(beer.id)}>Add to cart</a>
+            onClick={() => props.addToCart(this.props.id)}>Add to cart</a>
         </p>
       </div>
 
