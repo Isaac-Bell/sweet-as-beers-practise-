@@ -1,14 +1,12 @@
-#!/usr/bin/env node
-const knex = require('knex')
 const config = require('./knexfile').development
-db = knex(config)
+const connection = require('knex')(config)
 
 module.exports = {
   getBeers
 }
 
-// New function to select all beers from table beersies, as an array
-function getBeers () {
+// New function to select all beers' names from table beersies, as an array
+function getBeers (db = connection) {
   return db('beersies')
-    .select()
+    .select('name')
 }
