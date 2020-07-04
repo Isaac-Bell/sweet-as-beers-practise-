@@ -8,5 +8,5 @@ module.exports = {
 // New function to select all beers' names from table beersies, as an array
 function getBeers (db = connection) {
   return db('beersies')
-    .select('name')
+    .select()
 }
