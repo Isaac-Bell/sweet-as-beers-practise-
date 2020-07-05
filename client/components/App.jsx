@@ -11,7 +11,7 @@ class App extends Component {
   state = { beers: [] }
 
   componentDidMount = () => {
-    request.get(`http://localhost:3000/beers/beerList`).then(res => {
+    request.get(`http://localhost:3000/beers/`).then(res => {
       this.setState({
         beers: res.body,
       })
