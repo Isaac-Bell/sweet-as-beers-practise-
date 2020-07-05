@@ -1,9 +1,13 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 
 // import otherReducer from './other-reducer'
-import beerlist from './beerlist'
+import beerList from './beerList'
+import activePage from './activePage'
+import errorMessage from './errorMessage'
 
 export default combineReducers({
-  beerlist
+  beerList,
+  activePage,
+  errorMessage
   // otherReducer
 })

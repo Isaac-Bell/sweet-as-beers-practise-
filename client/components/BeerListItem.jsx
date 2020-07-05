@@ -1,6 +1,6 @@
 import React from 'react'
 
-function BeerlistItem (props) {
+function BeerListItem (props) {
   const beers = props.beers
   return (
   <>
@@ -12,7 +12,8 @@ function BeerlistItem (props) {
         <p>
           <span className="country"> {beer.country} </span>
           <span className="abv"> {beer.abv} </span>
-          <a href="#" className="cart-link">Add to cart</a>
+          {/* <a href="#" className="cart-link">Add to cart</a> */}
+          <button className="cart-link">Add to cart</button>
         </p>
       </div>
     )
@@ -22,4 +23,4 @@ function BeerlistItem (props) {
   )
 }
 
-export default BeerlistItem
+export default BeerListItem

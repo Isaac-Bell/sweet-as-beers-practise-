@@ -1,8 +1,8 @@
 import React from 'react'
 
-import BeerlistItem from './BeerListItem'
+import BeerListItem from './BeerListItem'
 
-function Beerlist (props) {
+function BeerList (props) {
   // const {store} = props
   // const state = store.getSate()
   const beers = props.beers
@@ -12,9 +12,9 @@ function Beerlist (props) {
     <>
 
       <p className="welcome">Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.</p>
-      <BeerlistItem beers={props.beers} /> 
+      <BeerListItem beers={props.beers} />
     </>
   )
 }
 
-export default Beerlist
+export default BeerList
