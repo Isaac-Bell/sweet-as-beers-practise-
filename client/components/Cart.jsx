@@ -1,18 +1,17 @@
 import React from 'react'
+import { connect } from 'react-redux'
+import { navigate } from '../actions/index'
+
 import CartListItem from './CartListItem'
 
 class Cart extends React.Component {
-  state = {
-    beer: [{
-      name: '',
-      quantity: ''
-    },
-    { name: '',
-      quantity: ''
-    }]
+  handleClick = () => {
+    const navAction = navigate('Listing')
+    this.props.dispatch(navAction)
   }
 
   render () {
+
     return (
       <>
         <div className="cart">
@@ -31,11 +30,14 @@ class Cart extends React.Component {
 
             <tbody>
               <>
-              <CartListItem state={this.state}/>
+              {this.props.cart.map((cartItem, i) => {
+                return (<CartListItem key={i} cart={cartItem}/>)
+              }
+              )}
               </>
               <tr className="actions">
                 <td>
-                  <a href="/designs/listing.html">Continue shopping</a>
+                  <a href="#" onClick={(e) => this.handleClick()}>Continue shopping</a>
                 </td>
                 <td>
                   <button>Update</button>
@@ -50,4 +52,10 @@ class Cart extends React.Component {
   }
 }
 
-export default Cart
+const mapStateToProps = (state) => {
+  return {
+    cart: state.cart
+  }
+}
+
+export default connect(mapStateToProps)(Cart)
