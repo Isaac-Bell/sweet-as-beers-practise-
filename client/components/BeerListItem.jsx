@@ -1,6 +1,7 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { navigate } from '../actions'
+// import { Componenet } from 'react'
 
 const BeerListItem = ({ beers, dispatch }) => {
 
