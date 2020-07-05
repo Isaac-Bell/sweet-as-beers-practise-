@@ -5,9 +5,9 @@ import { removeBeerFromCart } from '../actions/index'
 function CarListItem (props) {
   return (
     <tr>
-      <td>{props.beer}</td>
-      <td><input className="update-input" value={props.beer}/></td>
-      <td><button onClick={() => props.dispatch(removeBeerFromCart(props.beer.id))}> <span className="fa fa-trash fa-2x"></span></button></td>
+      <td>{props.beername}</td>
+      <td><input className="update-input" value={props.qauntity}/></td>
+      <td><button onClick={() => props.dispatch(removeBeerFromCart(props.beername))}> <span className="fa fa-trash fa-2x"></span></button></td>
     </tr>
   )
 }

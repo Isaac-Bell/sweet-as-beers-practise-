@@ -21,8 +21,19 @@ function beers (state = initialState, action) {
       }
 
     case 'REMOVE_FROM_CART':
-      delete state.cartBeers.splice(state.cartBeers.indexOf(beer => beer === action.beerid), 1)
-      return state
+      if (Object.keys(state.cartBeers).includes(action.beername) && state.cartBeers[action.beername] > 1) {
+        state.cartBeers[action.beername] -= 1
+        return {
+          cartBeers: state.cartBeers,
+          visible: true
+        }
+      } else {
+        delete state.cartBeers[action.beername]
+        return {
+          cartBeers:  state.cartBeers,
+          visible: true
+        }
+      }
 
     case 'SHOW_BEER_LIST':
       return {

@@ -21,7 +21,7 @@ function Cart (props) {
         </thead>
         <tbody>
           {Object.keys(props.cartBeers).map(beer => {
-            return <CartListItem beer={beer}/>
+            return <CartListItem beername={beer} qauntity={props.cartBeers[beer]}/>
           }
           )}
         </tbody>

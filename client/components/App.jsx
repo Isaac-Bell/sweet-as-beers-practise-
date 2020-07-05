@@ -14,7 +14,6 @@ class App extends React.Component {
     return (
       <div className='app'>
         {this.props.visible ? <Cart /> : <BeerList beerData={beerData} />}
-        {console.log(this.props)}
       </div>
     )
   }
