@@ -23,7 +23,9 @@
     ]
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "superagent": "^5.3.1"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
@@ -41,6 +43,7 @@
     "react-redux": "^7.2.0",
     "redux": "^4.0.5",
     "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "sqlite3": "^4.2.0"
   }
 }
