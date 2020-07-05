@@ -21,7 +21,7 @@ class App extends React.Component {
 
 function mapStateToProps(state) {
   return { 
-    visible: state.visible,
+    visible: state.beers.visible,
     update: state.update
   }
 }

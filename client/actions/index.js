@@ -24,3 +24,10 @@ export const updateCart = () => {
   }
 }
 
+export const orderComplete = (order) => {
+  return {
+    type: 'CHECKOUT',
+    order: order
+  }
+}
+

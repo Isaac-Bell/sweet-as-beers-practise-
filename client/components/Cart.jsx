@@ -1,7 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import CartListItem from './CartListItem'
-import { backToBeerList, updateCart } from '../actions/index'
+import { backToBeerList, updateCart, orderComplete } from '../actions/index'
+import Checkout from './Checkout'
 
 function Cart (props) {
   return (
@@ -30,8 +31,10 @@ function Cart (props) {
       <p className="actions">
         <a href="#" onClick={() => props.dispatch(backToBeerList())}>Continue shopping</a>
         <button onClick={() => props.dispatch(updateCart())}>Update</button>
-        <button className="button-primary">Checkout</button>
+        <button className="button-primary" onClick={() => props.dispatch(orderComplete(props.cartBeers))}>Checkout</button>
       </p>
+
+      {props.toggle ? <Checkout /> : console.log('ready for order')}
 
     </div>
   )
@@ -39,8 +42,9 @@ function Cart (props) {
 
 function mapStateToProps(state) {
   return { 
-      cartBeers: state.cartBeers,
-      update: state.update
+      cartBeers: state.beers.cartBeers,
+      update: state.beers.update,
+      toggle: state.orders.complete
     }
 }
 
