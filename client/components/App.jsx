@@ -20,7 +20,10 @@ class App extends React.Component {
 }
 
 function mapStateToProps(state) {
-  return { visible: state.visible }
+  return { 
+    visible: state.visible,
+    update: state.update
+  }
 }
 
 export default connect(mapStateToProps)(App)

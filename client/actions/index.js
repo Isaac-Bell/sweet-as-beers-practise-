@@ -18,3 +18,9 @@ export const backToBeerList = () => {
   }
 }
 
+export const updateCart = () => {
+  return {
+    type: 'UPDATE_CART',
+  }
+}
+
