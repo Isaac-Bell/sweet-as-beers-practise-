@@ -12,7 +12,8 @@ class App extends React.Component {
     return (
       <div className='app'>
         <Header />
-        <BeerList data={beerData} />
+        <BeerList data={beerData.beers} />
+        <Cart data={beerData.beers} />
       </div>
     )
   }
