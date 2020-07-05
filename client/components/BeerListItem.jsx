@@ -6,11 +6,11 @@ import React from 'react'
 
 // const { beers } = this.props.data
 
-function BeerListItem (props) {
+function BeerListItem (beers) {
   // const beers = props.beers
   return (
   <>
-  {props.data.beers.map((beer) => {
+  {beers.map((beer) => {
     return (
       <div key={beer.id} className="beer">
         <p className="name">{beer.name}</p>
