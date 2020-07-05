@@ -1,7 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { navigate } from '../actions'
 
-function BeerListItem (props) {
-  const beers = props.beers
+const BeerListItem = ({ beers, dispatch }) => {
+
+  console.log('listed beers:', beers)
+
+  // navigate = () => {
+  //   // button will action the buy cart page
+  //   console.log('navigate:', navigate)
+  // }
+
   return (
   <>
   {beers.map((beer) => {
@@ -13,7 +22,11 @@ function BeerListItem (props) {
           <span className="country"> {beer.country} </span>
           <span className="abv"> {beer.abv} </span>
           {/* <a href="#" className="cart-link">Add to cart</a> */}
-          <button className="cart-link">Add to cart</button>
+          <button
+            className="cart-link"
+            onClick={() => this.navigate()}>
+            Add to cart
+          </button>
         </p>
       </div>
     )
@@ -23,4 +36,4 @@ function BeerListItem (props) {
   )
 }
 
-export default BeerListItem
+export default connect()(BeerListItem)

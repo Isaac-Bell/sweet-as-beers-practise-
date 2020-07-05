@@ -7,6 +7,7 @@ export const SHOW_ERROR = 'SHOW_ERROR'
 export const navigate = (active) => {
   return {
     type: NAVIGATE
+    // toggle between pages
   }
 }
 
