@@ -10,6 +10,8 @@ export const cartReducer = (state = cart, action) => {
           name: action.name,
           quantity: 1
         }]
+    case 'REMOVE_FROM_CART':
+      return state.filter(element => element.id !== action.id)
     default:
       return state
   }
