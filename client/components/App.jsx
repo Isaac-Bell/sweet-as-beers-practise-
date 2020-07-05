@@ -5,16 +5,23 @@ import { connect } from 'react-redux'
 import Cart from './Cart'
 
 // This might need to be turned into a stateful (class-based) component
-const App = (props) => {
-  return (
-    <div className='app'>
-      {props.visible ? <Cart /> : <BeerList beerData={beerData} />}
-    </div>
-  )
+class App extends React.Component {
+  constructor (props) {
+    super(props)
+  }
+
+  render() {
+    return (
+      <div className='app'>
+        {this.props.visible ? <Cart /> : <BeerList beerData={beerData} />}
+        {console.log(this.props)}
+      </div>
+    )
+  }
 }
 
-function mapStateToProps (state) {
+function mapStateToProps(state) {
   return { visible: state.visible }
 }
 
-export default connect(mapStateToProps, null)(App)
+export default connect(mapStateToProps)(App)

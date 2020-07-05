@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import CartListItem from './CartListItem'
+import { backToBeerList } from '../actions/index'
 
 function Cart (props) {
   return (
@@ -19,7 +20,7 @@ function Cart (props) {
           </tr>
         </thead>
         <tbody>
-          {props.cartBeers.map(beer => {
+          {Object.keys(props.cartBeers).map(beer => {
             return <CartListItem beer={beer}/>
           }
           )}
@@ -27,7 +28,7 @@ function Cart (props) {
       </table>
 
       <p className="actions">
-        <a href="#">Continue shopping</a>
+        <a href="#" onClick={() => props.dispatch(backToBeerList())}>Continue shopping</a>
         <button>Update</button>
         <button className="button-primary">Checkout</button>
       </p>

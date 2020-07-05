@@ -11,3 +11,10 @@ export const removeBeerFromCart = (beerName) => {
     beername: beerName
   }
 }
+
+export const backToBeerList = () => {
+  return {
+    type: 'SHOW_BEER_LIST',
+  }
+}
+
