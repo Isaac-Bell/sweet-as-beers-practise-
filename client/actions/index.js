@@ -19,3 +19,10 @@ export const removeFromCart = id => {
     id
   }
 }
+
+export const updateQuantities = (cart) => {
+  return {
+    type: 'UPDATE_QUANTITIES',
+    cart
+  }
+}

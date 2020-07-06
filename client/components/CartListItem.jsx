@@ -12,7 +12,10 @@ class CartListItem extends React.Component {
       <>
         <tr>
           <td>{this.props.cart.name}</td>
-          <td><input className="update-input" placeholder={this.props.cart.quantity}/></td>
+          <td><input className="update-input"
+            placeholder={this.props.cart.quantity}
+            onChange={(e) => this.props.handleChange(e.target.value, this.props.cart.id)}
+          /></td>
           <td><button onClick={(e) => this.handleClick(this.props.cart.id)}><span className="fa fa-trash fa-2x"></span></button></td>
         </tr>
       </>
