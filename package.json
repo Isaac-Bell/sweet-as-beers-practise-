@@ -23,7 +23,9 @@
     ]
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "knex": "^0.21.1",
+    "sqlite3": "^5.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.3",
@@ -42,5 +44,14 @@
     "redux": "^4.0.5",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matai-2020/sweet-as-beers.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/matai-2020/sweet-as-beers/issues"
+  },
+  "homepage": "https://github.com/matai-2020/sweet-as-beers#readme"
 }
