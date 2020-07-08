@@ -30,3 +30,14 @@ router.delete('/:id', (req, res) => {
       res.status(500).send(err.message)
     })
 })
+
+// Create a route that will post a new beer given the id
+router.post('/:id', (req, res) => {
+  db.insertBeer(Number(req.params.id))
+    .then(() => {
+      res.sendStatus(202)
+    })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
+})
