@@ -1,20 +1,45 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import Header from './Header'
 import Cart from './Cart'
 import BeerList from './BeerList'
 
-import beerData from '../../data/beers'
+// import beerData from '../../data/beers'
+// const request = require('superagent')
 
 // This might need to be turned into a stateful (class-based) component
-const App = () => (
-  <>
-  <div className='app'>
-    <Header />
-    <BeerList beers = {beerData.beers} />
-    <Cart beers={beerData.beers} />
-  </div>
-  </>
-)
+class App extends Component {
+  state = { beers: [] }
 
-export default App
+  componentDidMount = () => {
+    request.get(`http://localhost:3000/beers/`).then(res => {
+      this.setState({
+        beers: res.body
+      })
+    })
+  }
+
+  render () {
+    return (
+      <>
+        <div className='app'>
+          <Header />
+          {this.props.navigate === 'listing' ? (
+            <BeerList beers = {this.state.beers} />
+          ) : (
+            // <Cart />
+          )}
+        </div>
+      </>
+    )
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    navigate: state.navigate
+  }
+}
+
+export default connect(mapStateToProps)(App)
