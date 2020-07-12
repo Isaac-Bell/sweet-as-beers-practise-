@@ -1,7 +1,15 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { connect } from 'react-redux'
 
-function Cart (props) {
-  const beers = props.beers
+const mapStateToProps = state => {
+  return {
+    beers: state.beers
+  }
+}
+
+function Cart () {
+  const beers = mapStateToProps.beers
+  console.log('CartListItem:', beers)
 
   return (
     <>
@@ -46,4 +54,4 @@ function Cart (props) {
   )
 }
 
-export default Cart
+export default connect(mapStateToProps)(Cart)

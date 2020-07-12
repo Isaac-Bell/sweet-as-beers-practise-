@@ -6,7 +6,7 @@ import Cart from './Cart'
 import BeerList from './BeerList'
 
 // import beerData from '../../data/beers'
-// const request = require('superagent')
+const request = require('superagent')
 
 // This might need to be turned into a stateful (class-based) component
 class App extends Component {
@@ -28,7 +28,7 @@ class App extends Component {
           {this.props.navigate === 'listing' ? (
             <BeerList beers = {this.state.beers} />
           ) : (
-            // <Cart />
+            <Cart />
           )}
         </div>
       </>
