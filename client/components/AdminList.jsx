@@ -5,8 +5,9 @@ import {newBeer} from '../actions/index.js'
 
 
 const submitBeer = (event,dispatch) => {
-  console.log(event.target)
-  dispatch(newBeer(event.target.value))
+  // event.preventDefault();
+  console.log( event.target.beer.value);
+  dispatch(newBeer(event.target.beer.value))
   }
 
 
@@ -18,23 +19,11 @@ const AdminList = (props) => {
           Welcome to the Admin screen to update the beer database
       </p>
 
-      <div>
-        <form onSubmit={
-        submitBeer
-        }
-
-        >
+      <form onSubmit={submitBeer}>
         <input type="text" name="beer" placeholder="New Beer name" />
-
         <button type="submit">Submit</button>
-        </form>
-        </div>
+      </form>
         
-
-
-     
-
-
       {props.beersData.map((beer, id) => {
         return <AdminListItem key={id} beer={beer} />
       })}
