@@ -21,11 +21,11 @@ function deleteBeer (id, db = connection) {
 }
 
 // Create a new function to delete a beer given the id from the Admin screen button click
-function insertBeer (id, db = connection) {
+function insertBeer (id, name, db = connection) {
   return db('beersies')
     .insert({
       id: id,
-      name: 'new',
+      name: name,
       brewery: 'new',
       country: 'new',
       style: 'new',

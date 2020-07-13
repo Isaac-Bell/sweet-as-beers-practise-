@@ -24,3 +24,10 @@ export const navigate = target => {
     target // 'listing' or 'admin'
   }
 }
+
+export const addBeer = (name) => {
+  return {
+    type: 'NEWBEER',
+    name,
+  }
+}
