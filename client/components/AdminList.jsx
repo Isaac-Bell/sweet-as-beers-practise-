@@ -4,13 +4,11 @@ import {connect} from 'react-redux'
 import {newBeer} from '../actions/index.js'
 
 
-function submitWord (e, dispatch) {
-  console.log(e.currentTarget.value)
-  if (e.keyCode === 13) { // enter
-    dispatch(newBeer(e.currentTarget.value))
-    e.currentTarget.value = ''
+const submitBeer = (event,dispatch) => {
+  console.log(event.target)
+  dispatch(newBeer(event.target.value))
   }
-}
+
 
 
 const AdminList = (props) => {
@@ -22,7 +20,7 @@ const AdminList = (props) => {
 
       <div>
         <form onSubmit={
-        submitWord
+        submitBeer
         }
 
         >
