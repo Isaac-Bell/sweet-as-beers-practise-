@@ -5,13 +5,12 @@ import request from 'superagent'
 const AdminList = (props) => {
 
   const submitBeer = (event) => {
-    // event.preventDefault();
     console.log(event.target.beer.value);
     request
     .post('/new')
     .send({
-      id:16,
-      name:event.target.beer.value
+      id: 20,
+      name: event.target.beer.value
     }
     )
   }
