@@ -1,15 +1,16 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     beers: state.beers
   }
 }
+console.log('carlistitems mapstate:', mapStateToProps)
 
 function Cart () {
   const beers = mapStateToProps.beers
-  console.log('CartListItem:', beers)
+  console.log('CartListItem:', mapStateToProps)
 
   return (
     <>
