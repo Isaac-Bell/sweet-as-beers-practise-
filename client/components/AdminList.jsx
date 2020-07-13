@@ -8,9 +8,9 @@ const AdminList = (props) => {
     // event.preventDefault();
     console.log(event.target.beer.value);
     request
-    .get('/new')
+    .post('/new')
     .send({
-      id:6,
+      id:16,
       name:event.target.beer.value
     }
     )
