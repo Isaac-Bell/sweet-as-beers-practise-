@@ -1,18 +1,21 @@
 import React from 'react'
 import AdminListItem from './AdminListItem'
-import {connect} from 'react-redux'
-import {newBeer} from '../actions/index.js'
-
-
-const submitBeer = (event,dispatch) => {
-  // event.preventDefault();
-  console.log( event.target.beer.value);
-  dispatch(newBeer(event.target.beer.value))
-  }
-
-
+import request from 'superagent'
 
 const AdminList = (props) => {
+
+  const submitBeer = (event) => {
+    // event.preventDefault();
+    console.log(event.target.beer.value);
+    request
+    .get('/new')
+    .send({
+      id:6,
+      name:event.target.beer.value
+    }
+    )
+  }
+
   return (
     <>
       <p className='welcome'>
@@ -31,4 +34,4 @@ const AdminList = (props) => {
   )
 }
 
-export default connect()(AdminList)
+export default AdminList
