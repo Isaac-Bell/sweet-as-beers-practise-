@@ -4,7 +4,6 @@ import request from 'superagent'
 const url = 'http://localhost:3000/newBeer'
 
 export NewBeer extends React.Component {
-
   state = {
     name: ''
   }
@@ -16,11 +15,9 @@ export NewBeer extends React.Component {
         this.setState({name})
       })
   }
-
-
+  
   render() {
-    const {name} = this.state
-    return (
+     return (
       <>
         <h2>New Beer name</h2>
         <p>{name}</p>
