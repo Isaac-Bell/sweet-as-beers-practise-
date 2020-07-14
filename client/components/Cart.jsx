@@ -1,51 +1,41 @@
 import React from 'react'
+import CartItem from './CartItem'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
-import CartListItem from './CartListItem'
 
-class Cart extends React.Component {
-  handleClick = () => {
-    const action = {
-      type: 'NAVIGATION',
-      navigation: this.state.navigation
-    }
+const Cart = ({ cartReducer }) => {
+  console.log('Cart.jsx receives state from store as cartReducer', cartReducer[0])
+  return (
+    <div className='cart'>
+      <p className='welcome'>Thirsty? Sweet! You're one step closer to a quenching.</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Beer</th>
+            <th>Quantity</th>
+            <th>Remove</th>
+          </tr>
+        </thead>
+        <tbody>
+          {cartReducer.map((cartBeer, id) => {
+            return <CartItem key={id} cartBeer={cartBeer} />
+          })}
+        </tbody>
+      </table>
+      <p className='actions'>
+        <Link to='/'>Continue shopping</Link>
 
-    this.props.store.dispatch(action)
-  }
+        <button>Update</button>
+        <button className='button-primary'>Checkout</button>
+      </p>
+    </div>
+  )
+}
 
-  render () {
-    return (
-      <div>
-        <p className="welcome">Thirsty? Sweet! You&apos;re one step closer to a quenching.</p>
-        <div>
-          <table>
-            <thead>
-              <tr>
-                <th>Beer</th>
-                <th>Quantity</th>
-                <th>Remove</th>
-              </tr>
-            </thead>
-            <tbody>
-              <CartListItem />
-            </tbody>
-
-          </table>
-
-          {/* create onclick function for navigation */}
-
-          <p className="actions">
-            <button onClick={this.handleClick}>Continue shopping</button>
-            <button>Update</button>
-            <button className="button-primary">Checkout</button>
-          </p>
-        </div>
-      </div>
-    )
+const mapStateToProps = (state) => {
+  return {
+    cartReducer: state.cartReducer
   }
 }
 
-// const mapStateToProps = (state) => ({
-
-// })
-
-export default connect()(Cart)
+export default connect(mapStateToProps)(Cart)

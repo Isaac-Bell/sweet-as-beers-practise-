@@ -1,8 +1,11 @@
 import { combineReducers } from 'redux'
-import navigation from './navigation'
-// import otherReducer from './other-reducer'
+
+import cartReducer from './cartReducer'
+import activePage from './activePage'
+import newBeer from './newBeer'
 
 export default combineReducers({
-  // otherReducer
-  navigation
+  cartReducer,
+  activePage,
+  newBeer
 })

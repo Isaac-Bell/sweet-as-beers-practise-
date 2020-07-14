@@ -1,29 +1,19 @@
 import React from 'react'
-import data from '../../data/beers'
-import { connect } from 'react-redux'
 import BeerListItem from './BeerListItem'
 
-const BeerList = () => {
+const BeerList = (props) => {
+  // View the first beer object in the array
+  console.log('BeerList.jsx component, first beer object in array', props.beersData[0])
   return (
-    <div>
-      <p className="welcome">Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.
+    <>
+      <p className='welcome'>
+          Welcome! Please select from our delicious selection and don't hesitate to let us know if we can answer any of your questions.
       </p>
-      <div>
-        {data.beers.map(beer => {
-          return (
-            <BeerListItem key={beer.name}
-              beerprop={beer} />
-          )
-        }
-        )}
-      </div>
-    </div>
+      {props.beersData.map((beer, id) => {
+        return <BeerListItem key={id} beer={beer} />
+      })}
+    </>
   )
 }
 
-// const mapStateToProps = (state) => ({
-
-// })
-
-export default connect()(BeerList)
-// export default connect(mapStateToProps)(BeerList)
+export default BeerList

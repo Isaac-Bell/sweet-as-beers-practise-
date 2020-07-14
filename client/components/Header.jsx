@@ -1,20 +1,11 @@
 import React from 'react'
-import { connect } from 'react-redux'
 
-export const Header = () => {
+const Header = () => {
   return (
-    <div>
-      <h1>
-        <span className="fa fa-beer"></span>
-        Sweet As Beers
-        <span className="fa fa-beer"></span>
-      </h1>
-    </div>
+    <>
+      <h1><span className='fa fa-beer' /> Sweet As Beers <span className='fa fa-beer' /></h1>
+    </>
   )
 }
 
-// const mapStateToProps = (state) => ({
-
-// })
-
-export default connect()(Header)
+export default Header

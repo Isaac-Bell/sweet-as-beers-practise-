@@ -1,29 +1,46 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { navigate } from '../actions'
-
+import { Route } from 'react-router-dom'
+import BeerList from './BeerList'
 import Header from './Header'
 import Cart from './Cart'
-import BeerList from './BeerList'
+import AdminList from './AdminList'
 
-// This might need to be turned into a stateful (class-based) component
-class App extends React.Component {
-  render () {
-    return (
-      <div>
-        <Header />
-        {this.props.navigation === 'BeerList' ? <BeerList /> : <Cart />}
-        {/* <BeerList />
-        <Cart /> */}
+// Connect App to store to use the activePage property
+import { connect } from 'react-redux'
+
+const beersData = require('../../data/beers.js')
+
+// Check the data is imported to App in the console
+console.log('App.js component Beers data:', beersData.default.beers)
+
+// Converted into a stateful (class-based) component
+const App = ({ activePage }) => {
+  return (
+    <>
+      <div className='app'>
+        <Route path='/' component={Header} />
+        <Route
+          exact path='/list' render={() => (
+            <BeerList beersData={beersData.default.beers} />
+          )}
+        />
+        <Route
+          exact path='/admin' render={() => (
+            <AdminList beersData={beersData.default.beers} />
+          )}
+        />
+        <Route exact path='/cart' component={Cart} />
+
       </div>
-    )
-  }
+    </>
+  )
 }
 
-const mapStatetoProps = (state) => {
+const mapStateToProps = (state) => {
   return {
-    navigation: state.navigation
+    activePage: state.activePage
+
   }
 }
 
-export default connect(mapStatetoProps)(App)
+export default connect(mapStateToProps)(App)

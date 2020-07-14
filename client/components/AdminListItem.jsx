@@ -1,12 +1,13 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
-import { addToCart } from '../actions/index.js'
+// import { deleteFromDB } from '../actions/index.js'
 
 // This component receives props from App
-const BeerListItem = (props) => {
+const Admin = (props) => {
+  // const handleClick = () => {
   const handleClick = (id, name, dispatch) => {
-    dispatch(addToCart(id, name))
+    console.log('Button click for id:', id, ' and name: ', name)
+    // dispatch(deleteFromDB(id, name))
   }
 
   return (
@@ -17,11 +18,11 @@ const BeerListItem = (props) => {
         <p>
           <span className='country'>{props.beer.country}</span>
           <span className='abv'>{props.beer.abv}</span>
-          <Link to='/cart' onClick={() => handleClick(props.beer.id, props.beer.name, props.dispatch)}>Add to cart</Link>
+          <button onClick={() => handleClick(props.beer.id, props.beer.name, props.dispatch)}>Delete from database</button>
         </p>
       </div>
     </>
   )
 }
 
-export default connect()(BeerListItem)
+export default connect()(Admin)
