@@ -2,12 +2,15 @@ const db = require('../db')
 const express = require('express')
 
 const router = express.Router()
+module.exports = router
 
 router.post('/', (req, res) => {
-  db.addYaBeer(req.params.name)
+  console.log(req)
+  db.addYaBeer(req.name)
     .then(() => {
       res.sendStatus(200)
     })
+    .catch(err => {
+      res.status(500).send(err.message)
+    })
 })
-
-module.exports = router

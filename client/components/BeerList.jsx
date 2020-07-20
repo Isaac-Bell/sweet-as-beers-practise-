@@ -1,8 +1,16 @@
 import React from 'react'
-import { connect } from 'react-redux'
 import BeerListItem from './BeerListItem'
+import request from 'superagent'
 
 let beer = ''
+
+function addaBeer (name) {
+  console.log(name)
+  request.post('/')
+    .send({
+      name: name
+    })
+}
 
 class BeerList extends React.Component {
   render () {
@@ -12,7 +20,7 @@ class BeerList extends React.Component {
         <p>Add a new beer to our list of beverages:</p>
         <input type="text" onChange={(event) => (beer = event.target.value)}
         />
-        <button onClick={() => console.log(beer)}>Enter it now</button>
+        <button onClick={() => addaBeer(beer)}>Enter it now</button>
         <button onClick={() => console.log(beer)}>Show API beers</button>
 
         {this.props.beers.map(beerItem => {
@@ -27,4 +35,4 @@ class BeerList extends React.Component {
   }
 }
 
-export default connect()(BeerList)
+export default BeerList

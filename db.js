@@ -1,5 +1,3 @@
-const { default: BeerList } = require('./client/components/BeerList')
-
 const environment = process.env.NODE_ENV || 'development'
 const config = require('./knexfile')[environment]
 const connection = require('knex')(config)
@@ -16,7 +14,7 @@ function getBeers (db = connection) {
 function addYaBeer (beer, db = connection) {
   return db('beers')
     .insert({
-      id: Math.floor(Math.random() * 200),
+      id: Math.floor(Math.random() * 30),
       name: beer,
       brewery: 'jonty',
       country: 'jonty',
