@@ -10,7 +10,15 @@ function addaBeer (name) {
     .send({
       name: name
     })
+    .then(console.log('hi'))
 }
+
+
+function returnBeer () {
+request.get('/')
+.then(res => console.log(res))
+}
+
 
 class BeerList extends React.Component {
   render () {
@@ -21,7 +29,7 @@ class BeerList extends React.Component {
         <input type="text" onChange={(event) => (beer = event.target.value)}
         />
         <button onClick={() => addaBeer(beer)}>Enter it now</button>
-        <button onClick={() => console.log(beer)}>Show API beers</button>
+        <button onClick={() => returnBeer()}>Show API beers</button>
 
         {this.props.beers.map(beerItem => {
           return (
