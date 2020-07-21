@@ -42,5 +42,7 @@ class BeerList extends React.Component {
     )
   }
 }
+d'
+swgjpwegedja
 
 export default BeerList
